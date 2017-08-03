@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_welcome">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerHorizontal="true"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="@dimen/img_width_height"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:src="@drawable/logo" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:text="@string/slide_1_title"
+                android:textColor="#404f5d"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:textSize="@dimen/slide_title"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:paddingLeft="@dimen/desc_padding"
+                android:paddingRight="@dimen/desc_padding"
+                android:text="@string/slide_1_desc"
+                android:textAlignment="center"
+                android:textColor="#949ea7"
+                android:textSize="@dimen/slide_desc" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+</RelativeLayout>

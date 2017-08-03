@@ -5,4 +5,9 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <string name="action_settings">Settings</string>
+    <string name="next">Next</string>
+    <string name="skip">Skip</string>
+    <string name="slide_1_title">Welcome to Food Recipes!</string>
+    <string name="slide_1_desc">Introducing Yonia, with more than 6 thousand receipes and amazing features yonia is your best choice to make any cook great.</string>
+    <string name="start">Start</string>
 </resources>
