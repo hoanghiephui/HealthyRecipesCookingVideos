@@ -10,4 +10,5 @@
     <string name="slide_1_title">Welcome to Food Recipes!</string>
     <string name="slide_1_desc">Introducing Yonia, with more than 6 thousand receipes and amazing features yonia is your best choice to make any cook great.</string>
     <string name="start">Start</string>
+    <string name="search_hint">Search for receipes</string>
 </resources>

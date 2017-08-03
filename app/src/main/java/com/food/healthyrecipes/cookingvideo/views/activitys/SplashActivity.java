@@ -1,10 +1,10 @@
 package com.food.healthyrecipes.cookingvideo.views.activitys;
 
-import android.content.Intent;
 import android.os.Bundle;
 
 import com.food.healthyrecipes.cookingvideo.R;
-import com.food.healthyrecipes.cookingvideo.views.base.BaseActivity;
+import com.food.healthyrecipes.cookingvideo.views.base.BaseSubActivity;
+import com.jemshit.elitemvp.utils.LauncherUtilities;
 
 import java.util.concurrent.TimeUnit;
 
@@ -19,7 +19,7 @@ import io.reactivex.schedulers.Schedulers;
  * Created by hoanghiep on 8/2/17.
  */
 
-public class SplashActivity extends BaseActivity {
+public class SplashActivity extends BaseSubActivity {
     @Override
     protected int getLayoutID() {
         return R.layout.activity_splash;
@@ -39,8 +39,7 @@ public class SplashActivity extends BaseActivity {
                 .subscribe(new Consumer<Object>() {
                     @Override
                     public void accept(Object o) throws Exception {
-                        startActivity(new Intent(SplashActivity.this, WelcomeActivity.class));
-                        finish();
+                        LauncherUtilities.openActivity(SplashActivity.this, WelcomeActivity.class);
                     }
                 });
     }

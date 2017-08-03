@@ -1,6 +1,5 @@
 package com.food.healthyrecipes.cookingvideo.views.activitys;
 
-import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
@@ -12,7 +11,8 @@ import android.widget.TextView;
 
 import com.food.healthyrecipes.cookingvideo.R;
 import com.food.healthyrecipes.cookingvideo.views.adapters.WelcomeViewPagerAdapter;
-import com.food.healthyrecipes.cookingvideo.views.base.BaseActivity;
+import com.food.healthyrecipes.cookingvideo.views.base.BaseSubActivity;
+import com.jemshit.elitemvp.utils.LauncherUtilities;
 
 import butterknife.BindView;
 
@@ -20,7 +20,7 @@ import butterknife.BindView;
  * Created by hoanghiep on 8/2/17.
  */
 
-public class WelcomeActivity extends BaseActivity {
+public class WelcomeActivity extends BaseSubActivity {
     @BindView(R.id.view_pager)
     ViewPager viewPager;
     @BindView(R.id.layoutDots)
@@ -44,15 +44,14 @@ public class WelcomeActivity extends BaseActivity {
         if (Build.VERSION.SDK_INT >= 21) {
             getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_STABLE | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN);
         }
-
-
+        overridePendingTransition(com.jemshit.elitemvp.R.anim.pull_in_right, com.jemshit.elitemvp.R.anim.push_out_left);
         // layouts of all welcome sliders
         // add few more layouts if you want
         layouts = new int[]{
                 R.layout.welcome_slide1,
-                R.layout.welcome_slide1,
-                R.layout.welcome_slide1,
-                R.layout.welcome_slide1};
+                R.layout.welcome_slide2,
+                R.layout.welcome_slide3,
+                R.layout.welcome_slide4};
 
         // adding bottom dots
         addBottomDots(0);
@@ -109,8 +108,7 @@ public class WelcomeActivity extends BaseActivity {
 
     private void launchHomeScreen() {
         //prefManager.setFirstTimeLaunch(false);
-        startActivity(new Intent(WelcomeActivity.this, MainActivity.class));
-        finish();
+        LauncherUtilities.openActivity(this, MainActivity.class);
     }
 
     //  viewpager change listener
