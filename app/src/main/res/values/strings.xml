@@ -11,4 +11,10 @@
     <string name="slide_1_desc">Introducing Yonia, with more than 6 thousand receipes and amazing features yonia is your best choice to make any cook great.</string>
     <string name="start">Start</string>
     <string name="search_hint">Search for receipes</string>
+    <string name="more">See more</string>
+    <string name="special">Ramadan special</string>
+    <string name="chief_follow">Chief following</string>
+    <string name="food_stories">Food Stories</string>
+    <string name="for_vegetarians">For vegetarians</string>
+    <string name="cookbook">Cookbook offical chef</string>
 </resources>

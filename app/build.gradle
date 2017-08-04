@@ -22,6 +22,28 @@ android {
     packagingOptions {
         exclude 'META-INF/rxjava.properties'
     }
+
+    android.applicationVariants.all { variant ->
+        variant.mergeAssets.doLast {
+            File fonts = file("$variant.mergeAssets.outputDir/fonts")
+            if (fonts.exists()) {
+                for (File file : fonts.listFiles()) {
+                    if (file.getName().contains("RobotoSlab") || file.getName().contains("Roboto-BlackItalic") ||
+                            file.getName().contains("Roboto-BoldItalic") || file.getName().contains("Roboto-Italic") ||
+                            file.getName().contains("Roboto-LightItalic") || file.getName().contains("Roboto-MediumItalic") ||
+                            file.getName().contains("Roboto-Regular") || file.getName().contains("Roboto-ThinItalic") ||
+                            file.getName().contains("RobotoCondensed-BoldItalic") || file.getName().contains("RobotoCondensed-Italic") ||
+                            file.getName().contains("RobotoCondensed-LightItalic") || file.getName().contains("RobotoMono-BoldItalic") ||
+                            file.getName().contains("RobotoMono-Italic") || file.getName().contains("RobotoMono-LightItalic") ||
+                            file.getName().contains("RobotoMono-MediumItalic") || file.getName().contains("RobotoMono-Regular") ||
+                            file.getName().contains("RobotoMono-ThinItalic")) {
+                        println("delete " + file.getName() + " font")
+                        file.delete()
+                    };
+                }
+            }
+        }
+    }
 }
 
 dependencies {
@@ -38,4 +60,7 @@ dependencies {
     compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
     implementation project(':libbanner')
     compile "com.andkulikov:transitionseverywhere:1.7.4"
+    compile 'com.github.johnkil.android-robototextview:robototextview:4.0.0'
+    compile 'com.balysv:material-ripple:1.0.2'
+    compile 'de.hdodenhof:circleimageview:2.1.0'
 }

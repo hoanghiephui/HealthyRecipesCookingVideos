@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -8,13 +8,245 @@
     tools:context="com.food.healthyrecipes.cookingvideo.views.activitys.MainActivity"
     tools:showIn="@layout/app_bar_main">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginTop="25dp"
+        android:orientation="vertical">
 
-</android.support.constraint.ConstraintLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_default_min"
+            android:orientation="vertical">
+
+            <com.balysv.materialripple.MaterialRippleLayout
+                android:id="@+id/movie_releasing_week_riple"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:mrl_rippleColor="@color/colorAccent"
+                app:mrl_rippleOverlay="true">
+
+                <LinearLayout
+                    style="@style/TitleBackground"
+                    android:layout_width="match_parent">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="0.85"
+                        android:orientation="vertical">
+
+                        <com.devspark.robototextview.widget.RobotoTextView
+                            style="@style/TitleTitleTextView"
+                            android:text="@string/special"
+                            android:textSize="@dimen/text_medium"
+                            app:robotoTypeface="roboto_bold" />
+
+                    </LinearLayout>
+
+                    <include layout="@layout/init_button_more" />
+
+                </LinearLayout>
+
+            </com.balysv.materialripple.MaterialRippleLayout>
+
+            <FrameLayout
+                android:id="@+id/container_releasing_week_movies"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="@dimen/recycler_view_min_height" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/viewAds"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/margin_default_medium"
+            android:orientation="horizontal"
+            android:visibility="gone" />
+
+        <LinearLayout
+            style="@style/TitleBackground"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/profile_image"
+                android:layout_width="?actionBarSize"
+                android:layout_height="?actionBarSize"
+                android:src="@drawable/photos"
+                app:civ_border_color="#757575"
+                app:civ_border_width="2dp" />
+
+            <LinearLayout
+                android:layout_marginLeft="16dp"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:layout_weight="0.85"
+                android:orientation="vertical">
+
+                <com.devspark.robototextview.widget.RobotoTextView
+                    style="@style/TitleTitleTextView"
+                    android:text="Hoang Hiep"
+                    android:textSize="@dimen/txt_size_medium"
+                    app:robotoTypeface="roboto_bold" />
+
+                <com.devspark.robototextview.widget.RobotoTextView
+                    style="@style/TitleSubtitleTextView"
+                    android:text="@string/cookbook"
+                    app:robotoTypeface="roboto_light" />
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_default_medium"
+            android:orientation="vertical">
+
+            <com.balysv.materialripple.MaterialRippleLayout
+                android:id="@+id/movie_populares_riple"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:mrl_rippleColor="@color/colorPrimaryDark"
+                app:mrl_rippleOverlay="true">
+
+                <LinearLayout style="@style/TitleBackground">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="0.85"
+                        android:orientation="vertical">
+
+                        <com.devspark.robototextview.widget.RobotoTextView
+                            style="@style/TitleTitleTextView"
+                            android:text="@string/food_stories"
+                            android:textColor="@color/subtitle_white"
+                            android:textSize="@dimen/text_medium"
+                            app:robotoTypeface="roboto_bold" />
+
+                    </LinearLayout>
+
+                    <include layout="@layout/init_button_more" />
+
+                </LinearLayout>
+
+            </com.balysv.materialripple.MaterialRippleLayout>
+
+            <FrameLayout
+                android:id="@+id/container_popular_movies"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="@dimen/recycler_view_min_height" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_default_medium"
+            android:orientation="vertical">
+
+            <com.balysv.materialripple.MaterialRippleLayout
+                android:id="@+id/movie_now_playing_riple"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:mrl_rippleColor="@color/colorAccent"
+                app:mrl_rippleOverlay="true">
+
+                <LinearLayout style="@style/TitleBackground">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="0.85"
+                        android:orientation="vertical">
+
+                        <com.devspark.robototextview.widget.RobotoTextView
+                            style="@style/TitleTitleTextView"
+                            android:text="@string/chief_follow"
+                            android:textSize="@dimen/text_medium"
+                            app:robotoTypeface="roboto_bold" />
+
+                    </LinearLayout>
+
+                    <include layout="@layout/init_button_more" />
+
+                </LinearLayout>
+
+            </com.balysv.materialripple.MaterialRippleLayout>
+
+            <FrameLayout
+                android:id="@+id/container_now_playing_movies"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="@dimen/recycler_view_min_height" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/activity_horizontal_margin"
+            android:layout_marginTop="@dimen/margin_default_medium"
+            android:orientation="vertical">
+
+            <com.balysv.materialripple.MaterialRippleLayout
+                android:id="@+id/movie_upcoming_riple"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:mrl_rippleColor="@color/colorAccent"
+                app:mrl_rippleOverlay="true">
+
+                <LinearLayout style="@style/TitleBackground">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_weight="0.85"
+                        android:orientation="vertical">
+
+                        <com.devspark.robototextview.widget.RobotoTextView
+                            style="@style/TitleTitleTextView"
+                            android:text="@string/for_vegetarians"
+                            android:textSize="@dimen/text_medium"
+                            app:robotoTypeface="roboto_bold" />
+
+                    </LinearLayout>
+
+                    <include layout="@layout/init_button_more" />
+
+                </LinearLayout>
+
+            </com.balysv.materialripple.MaterialRippleLayout>
+
+            <FrameLayout
+                android:id="@+id/container_upcoming_movies"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="@dimen/recycler_view_min_height" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/viewAdsMini"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="@dimen/margin_default_medium"
+            android:orientation="horizontal"
+            android:visibility="gone" />
+    </LinearLayout>
+
+
+</android.support.v4.widget.NestedScrollView>
